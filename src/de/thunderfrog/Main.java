@@ -13,7 +13,10 @@ public class Main {
 
             String title = keyboard.nextLine(), artist=keyboard.nextLine();
 
-            if (collection.playCD(title,artist)==false) {
+
+
+
+            if (!collection.playCD(title, artist)) {
                 System.out.println("Diese CD Ist nicht in der Sammlung enthalten");
             }
     }

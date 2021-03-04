@@ -1,4 +1,4 @@
-package de.thunderfrog.fancyarray;
+package de.thunderfrog.utils;
 
 /*
  * Array sind doof,
