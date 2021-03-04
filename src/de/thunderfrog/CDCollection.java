@@ -12,19 +12,20 @@ public class CDCollection {
 
     // fügt der Sammlung eine  CD hinzu
     public void addCD (CD cd){
-
-        CDs.add(cd.artist);
-        CDs.add(cd.title);
-
-        System.out.println("CD : " + cd.artist + " | " + cd.title  + " hinzugefügt!");
+        CDs.add(cd);
     }
 
     // spielt die angegebene CD und gibt true zurück
     // gibt false zurück, wenn die CD nicht in der Liste enthalten
-    public boolean playCD(String title, String artist){
-        if(CDs.indexOf(title) != -1 || CDs.indexOf(artist) != -1){
-            System.out.println("Aktuelles Lied: " + title + " von " + artist);
-            return true;
+    public boolean playCD(String title, String artist) {
+
+        // Alle CDs im FancyArray durchgehen
+        for (int i = 0; i < CDs.size(); i++) {
+            CD cd = (CD) CDs.get(i);
+            if (cd.getArtist().equals(artist) && cd.getTitle().equals(title)) {
+                cd.play();
+                return true;
+            }
         }
         return false;
     }
